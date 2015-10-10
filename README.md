@@ -1,4 +1,4 @@
-# broway.js
+# broway.io
 
 ## File structure:
 **client/** – Any files inside any directories named client are purely client-side, and will not be loaded by the server. We will add code for event handlers here.
