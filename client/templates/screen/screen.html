@@ -3,6 +3,7 @@
         <div class="bw-middle">
             <div class="bw-left-sidebar {{classFromOrigin message.origin.type}}"></div>
             <div class="bw-content">
+
                 {{#if isText message.type}}
                     {{ > contentText text=message.data}}
                 {{else}}
@@ -11,11 +12,14 @@
                     {{else}}
                         {{#if isMeetup message.type}}
                             {{ > contentMeetup message=message}}
+                        {{ else }}
+                            {{ > contentVideo message=message}}
                         {{/if}}
                     {{/if}}
                 {{/if}}
             </div>
         </div>
+
         <div class="bw-footer">
             <div class="logo {{classFromOrigin message.origin.type}}">
                 <img src="{{iconFromOrigin message.origin.type}}">
