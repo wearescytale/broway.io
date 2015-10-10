@@ -54,8 +54,6 @@ var fetchNewMeetups = function () {
                    console.log(error);
                    return;    
                }
-               
-               console.log(nrAffected);
            });
         });
     } catch (e) {
