@@ -2,7 +2,7 @@ slackWebHookService = {
     getMessage : function(payload) {
         var team_domain     = payload.team_domain;
         var channel_name    = payload.channel_name;
-        var timestamp       = payload.timestamp;
+        var timestamp       = payload.timestamp * 1000; // Convert to unix timestamp
         var username        = payload.user_name;
         var original_text   = payload.text;
         var trigger_word    = payload.trigger_word;
@@ -18,7 +18,7 @@ slackWebHookService = {
         var message = {
             author: username,
             origin: origin,
-            timestamp: timestamp
+            timestamp: new Date(timestamp)
         };
 
         var messageType = this.getType(data);
