@@ -35,7 +35,6 @@ Template.contentVideo.onRendered(function() {
                 onReady: function (event) {
                     // Play video when player ready.
                     event.target.playVideo();
-
                     Messages.update({_id:that.data.message._id}, {$set: {
                             'videoName':player.getVideoData().title,
                             'videoDuration':player.getDuration(),

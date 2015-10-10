@@ -25,7 +25,6 @@ Template.screen.helpers({
     },
 
     classFromType: function(type) {
-        console.log(type);
 
         if (type === 'text' || type === 'image' || type === 'meetup') {
             return 'bw-screen__' + type;
