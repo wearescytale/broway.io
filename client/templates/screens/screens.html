@@ -1,13 +1,5 @@
 <template name="screens">
 	{{#each messages}}
-        {{#if isText type}}
-            {{> screenText}}
-        {{else}}
-            {{#if isImage type}}
-                {{> screenImage}}
-            {{else}}
-                {{> screenVideo}}
-            {{/if}}
-		{{/if}}
+        {{> screen current=current message=this}}
 	{{/each}}
 </template>

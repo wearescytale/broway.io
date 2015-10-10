@@ -1,15 +1,13 @@
 Template.screens.helpers({
-    messages: Messages.find({}),
-
-    isText: function(type) {
-        return type === 'text';
-    },
-
-    isVideo: function(type) {
-        return type === 'video';
-    },
-    
-    isImage: function(type) {
-        return type === 'image';
+    messages: function() {
+        return Messages.find({}, {order: {timestamp: -1}}).map(function (doc, index, cursor) {
+                return _.extend(doc, {index: index});
+        });
     }
 });
+
+Template.screens.onRendered = function() {
+    Meteor.setTimeout(function() {
+        Messages.find({}, {order: {timestamp: -1}})
+    }, 1000);
+};

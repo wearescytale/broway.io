@@ -21,3 +21,5 @@ insecure                # Allow all DB writes from clients (for prototyping)
 iron:router
 fourseven:scss
 reywood:bootstrap3-sass
+momentjs:moment
+underscore
