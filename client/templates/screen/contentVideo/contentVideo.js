@@ -15,6 +15,7 @@ Template.contentVideo.onRendered(function() {
 
     var that    = this;
     var videoID = this.data.message.data;
+    var player;
 
     onYouTubeIframeAPIReady = function () {
 
@@ -34,8 +35,6 @@ Template.contentVideo.onRendered(function() {
                 onReady: function (event) {
                     // Play video when player ready.
                     event.target.playVideo();
-
-                    videoName = player.getVideoData().title;
 
                     Messages.update({_id:that.data.message._id}, {$set: {
                             'videoName':player.getVideoData().title,
@@ -69,7 +68,6 @@ Template.contentVideo.onRendered(function() {
                 }
             }
         });
-
     };
 
     YT.load();
