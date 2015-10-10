@@ -3,14 +3,17 @@
         <div class="bw-middle">
             <div class="bw-left-sidebar bw--slack"></div>
             <div class="bw-content">
-                {{#if isText message.type }}
-                    {{ > contentText message=message}}
-                {{ else }}
-                {{ /if}}
+                {{#if isText message.type}}
+                    {{ > contentText text=message.data}}
+                {{else}}
+                    {{#if isImage message.type}}
+                        {{ > contentImage imageUrl=message.data}}
+                    {{/if}}
+                {{/if}}
             </div>
         </div>
         <div class="bw-footer">
-            <div class="logo bw--slack">
+            <div class="logo">
                 <img src="slack.png">
             </div>
             <div class="avatar">
