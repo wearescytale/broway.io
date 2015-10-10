@@ -32,6 +32,10 @@ var fetchNewMeetups = function () {
                    country: value.venue.country,
                },
                distance: value.distance * 1.609344,
+               origin: {
+                   type: 'meetup',
+                   meta: {}
+               }
            };
            
            if (value.short_link) {
