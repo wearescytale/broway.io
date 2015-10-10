@@ -22,8 +22,10 @@ $avatar-height: $avatar-width;
     }
 
     &__text {
-        padding: 70px;
-        font-size: 2em;
+        .bw-content__text {
+            font-size: 2em;
+            padding: 70px;
+        }
     }
 
     &__image {
