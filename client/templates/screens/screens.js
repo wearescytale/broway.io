@@ -15,7 +15,7 @@ Template.screens.onRendered(function() {
             Messages.remove({_id: messages[0]._id});
         }
 
-        Meteor.setTimeout(function() {return getNext();}, timeout);
+        // Meteor.setTimeout(function() {return getNext();}, timeout);
     };
 
     Meteor.setTimeout(function() {return getNext();}, timeout);

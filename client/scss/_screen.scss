@@ -193,6 +193,7 @@ $avatar-height: $avatar-width;
         top: 0;
         height: 100%;
         width: $left-bar-width;
+        border-right: 1px solid lightgray;
 
         img {
             max-width: 80%;
@@ -203,6 +204,13 @@ $avatar-height: $avatar-width;
             top: 0;
             bottom: 0;
             margin: auto;
+        }
+
+        &.bw--youtube {
+            img {
+                max-width: 100%;
+                max-height: 100%;
+            }
         }
     }
 
@@ -243,4 +251,55 @@ $avatar-height: $avatar-width;
 .bw-content__text {
     padding: 70px;
     font-size: 2em;
+}
+
+
+.bw-screen__video {
+
+    .bw-footer {
+        display: none;
+
+        &.bw-footer__video {
+            display: block;
+        }
+    }
+
+    .bw-left-sidebar {
+        display: none;
+    }
+
+    .bw-content {
+        padding-left: 0;
+    }
+
+    .bw-information {
+        width: calc(100% - #{$left-bar-width});
+    }
+
+    .title {
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+        font-weight: 100;
+        margin-top: 5px;
+    }
+}
+
+.bw-footer__video {
+    background: rgba(255,255,255,0.5);
+}
+
+.loading-bar {
+    width: 0;
+    height: 12px;
+    background: red;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    -webkit-box-shadow: 0px -1px 7px 0px RGBA(255, 0, 0, 0.5);
+    -moz-box-shadow: 0px -1px 7px 0px RGBA(255, 0, 0, 0.5);
+    box-shadow: 0px -1px 7px 0px RGBA(255, 0, 0, 0.5);
 }

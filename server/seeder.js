@@ -17,7 +17,7 @@ Meteor.startup(function() {
 
     Messages.insert({
         type: 'video/youtube',
-        data: 'oCQbC818KKU',
+        data: 'bpOSxM0rNPM',
         author: 'Veiga',
         origin: {
             type: 'slack',
@@ -40,4 +40,5 @@ Meteor.startup(function() {
         },
         timestamp: new Date()
     });
+
 });

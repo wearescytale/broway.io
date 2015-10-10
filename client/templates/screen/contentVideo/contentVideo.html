@@ -1,3 +1,18 @@
 <template name="contentVideo">
-    Video === {{type}}
+
+    <div id="player"></div>
+
+    <div class="bw-footer bw-footer__video">
+        <div class="logo bw--youtube">
+            <img src="play.png">
+        </div>
+        <div class="bw-information">
+            <div class="user-info">
+                <h1 class="title">{{ message.videoName }}</h1>
+                <p class="subtitle">{{ valInMinutes message.videoCurrentTime }}/{{ valInMinutes message.videoDuration }}</p>
+
+            </div>
+            <div class="loading-bar" style="width:{{ barSize message.videoCurrentTime message.videoDuration }}%"></div>
+        </div>
+    </div>
 </template>
