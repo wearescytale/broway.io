@@ -46,8 +46,6 @@ var fetchNewMeetups = function () {
                event.photo_url = value.photo_url;
            }
            
-           console.log(event);
-           
            Messages.update({id: event.id}, event, {upsert: true}, function(error, nrAffected) {
                
                if (error) {
