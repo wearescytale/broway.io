@@ -10,9 +10,11 @@ slackWebHookService = {
         var data = original_text.split(trigger_word)[1].trim();
 
         var origin = {
-            service: "slack",
-            channel_name: channel_name,
-            team_domain: team_domain
+            type: "slack",
+            meta: {
+                channel_name: channel_name,
+                team_domain: team_domain
+            }
         };
 
         var message = {
