@@ -11,7 +11,7 @@ Template.screens.onRendered(function() {
 
     var getNext = function() {
         var messages = Messages.find({}, {order: {timestamp: -1}, limit: 2}).fetch();
-        console.log(messages)
+
         if (messages.length > 1 && messages[0].videoState !== 'playing') {
             Messages.remove({_id: messages[0]._id});
         }
