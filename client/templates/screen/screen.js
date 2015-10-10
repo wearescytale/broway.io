@@ -11,7 +11,7 @@ Template.screen.helpers({
         return type === 'image';
     },
 
-    isCurrent: function(index) {
+    isFirst: function(index) {
         if (index === 0)
             return 'bw-screen__current';
     },

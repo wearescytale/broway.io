@@ -6,8 +6,18 @@ Template.screens.helpers({
     }
 });
 
-Template.screens.onRendered = function() {
-    Meteor.setTimeout(function() {
-        Messages.find({}, {order: {timestamp: -1}})
-    }, 1000);
-};
+Template.screens.onRendered(function() {
+    var timeout = 10000;
+
+    var getNext = function() {
+        console.log('OLA');
+        var messages = Messages.find({}, {order: {timestamp: -1}, limit: 2}).fetch();
+        if (messages.length > 1) {
+            Messages.remove({_id: messages[0]._id});
+        }
+
+        Meteor.setTimeout(function() {return getNext();}, timeout);
+    };
+
+    // Meteor.setTimeout(function() {return getNext();}, timeout);
+})
