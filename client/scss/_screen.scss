@@ -17,8 +17,7 @@ $avatar-height: $avatar-width;
 
     &.bw-screen__text {
         .bw-content {
-            width: calc(100% - $left-bar-width);
-            left: $left-bar-width;
+            width: 100%;
         }
     }
 }
@@ -106,9 +105,14 @@ $avatar-height: $avatar-width;
         }
 
         .time {
-            font-size: 25px;
+            font-size: 20px;
             color: gray;
-            padding-top: 5px;
+            font-weight: 100;
         }
     }
+}
+
+.bw-content__text {
+    padding: 70px;
+    font-size: 2em;
 }
