@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    text-shadow: rgba(0,0,0,.01) 0 0 1px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+
+
+.bw--slack {
+    background: $slack-color;
+}
+
+.bw--meetup {
+    background: $white;
+}

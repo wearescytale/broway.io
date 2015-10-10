@@ -1,0 +1,13 @@
+<template name="settings">
+    <div class="row">
+        <div class="col-xs-2">
+            <ul>
+                <li><a href="/settings/slack">Slack</a></li>
+                <li><a href="/settings/meetup">Meetup</a></li>
+            </ul>
+        </div>
+        <div class="col-xs-10">
+            {{ > yield }}
+        </div>
+    </div>
+</template>

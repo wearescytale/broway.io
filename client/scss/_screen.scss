@@ -1,0 +1,246 @@
+$left-bar-width: 15%;
+$bottom-bar-height: 140px;
+$avatar-width: 100px;
+$avatar-height: $avatar-width;
+
+.bw-screen {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    &.bw-screen__current {
+        display: block;
+    }
+
+    &.bw-screen__text {
+        .bw-content {
+            width: 100%;
+        }
+    }
+
+    &__text {
+        .bw-content__text {
+            font-size: 2em;
+            padding: 70px;
+        }
+    }
+
+    &__image {
+        .bw-left-sidebar {
+            display: none;
+        }
+
+        .bw-content {
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .image {
+                width: 80%;
+                max-height: 100%;
+            }
+
+            .background {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                opacity: .5;
+                -webkit-filter: blur(15px);
+                filter: blur(15px);
+            }
+        }
+    }
+
+    &__meetup {
+        .bw-content__meetup {
+            padding: 70px;
+        }
+
+        .title {
+            font-size: 4.5em;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            font-size: 2.5em;
+        }
+
+        .description {
+            font-size: 2em;
+            padding: 20px;
+        }
+    }
+}
+
+.bw-left-sidebar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: $left-bar-width;
+}
+
+.bw-middle {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: calc(100% - #{$bottom-bar-height});
+    overflow: hidden;
+}
+
+.bw-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    padding-left: $left-bar-width;
+}
+
+.bw-footer {
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    height: $bottom-bar-height;
+    overflow: hidden;
+    position: absolute;
+    border-top: 1px solid lightgray;
+    padding: 20px 0;
+
+    .logo {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: $left-bar-width;
+
+        img {
+            max-width: 80%;
+            max-height: 80%;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+    }
+
+    .avatar {
+        border-radius: 50%;
+        overflow: hidden;
+        width: $avatar-width;
+        height: $avatar-height;
+
+        margin-left: $left-bar-width + 5%;
+
+        img {
+            max-height: 100%;
+            max-width: 100%;
+        }
+    }
+
+    .bw-information {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: calc(100% - #{$left-bar-width + 5%} - #{$avatar-width});
+        padding: 30px 20px;
+
+        .name {
+            font-size: 35px;
+            font-weight: 600;
+        }
+
+        .time {
+            font-size: 20px;
+            color: gray;
+            font-weight: 100;
+        }
+    }
+}
+
+.bw-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    padding-left: $left-bar-width;
+}
+
+.bw-footer {
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    height: $bottom-bar-height;
+    overflow: hidden;
+    position: absolute;
+    border-top: 1px solid lightgray;
+    padding: 20px 0;
+
+    .logo {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: $left-bar-width;
+
+        img {
+            max-width: 80%;
+            max-height: 80%;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+    }
+
+    .avatar {
+        border-radius: 50%;
+        overflow: hidden;
+        width: $avatar-width;
+        height: $avatar-height;
+
+        margin-left: $left-bar-width + 5%;
+
+        img {
+            max-height: 100%;
+            max-width: 100%;
+        }
+    }
+
+    .bw-information {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: calc(100% - #{$left-bar-width + 5%} - #{$avatar-width});
+        padding: 30px 20px;
+
+        .name {
+            font-size: 35px;
+            font-weight: 600;
+        }
+
+        .time {
+            font-size: 20px;
+            color: gray;
+            font-weight: 100;
+        }
+    }
+}
+
+.bw-content__text {
+    padding: 70px;
+    font-size: 2em;
+}

@@ -1,0 +1,13 @@
+<template name="contentMeetup">
+    <div class="bw-content__meetup">
+        <div class="title">
+            {{message.name}} - {{round message.distance}} Km
+        </div>
+        <div class="subtitle">
+            {{message.venue.city}}, {{message.venue.country}} - {{formatTime message.time}}
+        </div>
+        <div class="description">
+            {{{message.description}}}
+        </div>
+    </div>
+</template>
