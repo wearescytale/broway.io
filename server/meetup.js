@@ -67,6 +67,6 @@ var fetchNewMeetups = function () {
 
 var cron = new Meteor.Cron( {
     events:{
-    "0 */2 * * *"  : fetchNewMeetups
+    "* * * * *"  : fetchNewMeetups
     }
 });
