@@ -23,3 +23,5 @@ fourseven:scss
 reywood:bootstrap3-sass
 momentjs:moment
 underscore
+http
+mrt:cron

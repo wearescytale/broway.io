@@ -1,6 +1,6 @@
 Meteor.startup(function() {
     // Add this if you want to remove all messages before seeding
-    Messages.remove({});
+    // Messages.remove({});
 
     Messages.insert({
         type: 'text',
