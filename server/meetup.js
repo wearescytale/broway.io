@@ -32,14 +32,14 @@ var fetchNewMeetups = function () {
                    country: value.venue.country,
                },
                distance: value.distance * 1.609344,
-           }
+           };
            
            if (value.short_link) {
                event.short_link = value.short_link;
            }
            
            if (value.simple_html_description) {
-               event.simple_html_description = value.simple_html_description
+               event.simple_html_description = value.simple_html_description;
            }
            
            if (value.photo_url) {
