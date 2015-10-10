@@ -16,9 +16,9 @@ var fetchNewMeetups = function () {
                     key: '9657f1241185e7f156620395c92c2',
                 }
             });
-            
-        var events = result.data.results;       
-        
+
+        var events = result.data.results;
+
         _.each(events, function(value, key, list) {
            var event = {
                type: 'meetup',
@@ -37,24 +37,24 @@ var fetchNewMeetups = function () {
                    meta: {}
                }
            };
-           
+
            if (value.short_link) {
                event.short_link = value.short_link;
            }
-           
+
            if (value.simple_html_description) {
                event.simple_html_description = value.simple_html_description;
            }
-           
+
            if (value.photo_url) {
                event.photo_url = value.photo_url;
            }
-           
+
            Messages.update({id: event.id}, event, {upsert: true}, function(error, nrAffected) {
-               
+
                if (error) {
                    console.log(error);
-                   return;    
+                   return;
                }
            });
         });

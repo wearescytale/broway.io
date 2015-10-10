@@ -1,20 +1,24 @@
 <template name="screen">
     <section class="bw-screen {{isFirst message.index}} {{classFromType message.type}}">
         <div class="bw-middle">
-            <div class="bw-left-sidebar bw--slack"></div>
+            <div class="bw-left-sidebar {{classFromOrigin message.origin.type}}"></div>
             <div class="bw-content">
                 {{#if isText message.type}}
                     {{ > contentText text=message.data}}
                 {{else}}
                     {{#if isImage message.type}}
                         {{ > contentImage imageUrl=message.data}}
+                    {{else}}
+                        {{#if isMeetup message.type}}
+                            {{ > contentMeetup message=message}}
+                        {{/if}}
                     {{/if}}
                 {{/if}}
             </div>
         </div>
         <div class="bw-footer">
-            <div class="logo bw--slack">
-                <img src="slack.png">
+            <div class="logo {{classFromOrigin message.origin.type}}">
+                <img src="{{iconFromOrigin message.origin.type}}">
             </div>
             <div class="avatar">
                 <img src="avatar.jpg">
