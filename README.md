@@ -1,5 +1,15 @@
 # broway.io
 
+## How to
+The app as a seeder.js script that will inject some fake messages and demo the application capabilities.
+To configure and use real data go to /settings to enable and configure the Slack and Meetup integrations.
+
+### Slack
+The Slack integration will listen to a channel and send every message starting with 'bro:' to the app. If the content is an url with an image it will display it. If the url is to an youtube video it will automatically play it. Any other message will be displayed as plain text.
+
+### Meetup
+The Meetup integration will automatically find all meetups near you and display them on the screen.
+
 ## File structure:
 **client/** – Any files inside any directories named client are purely client-side, and will not be loaded by the server. We will add code for event handlers here.
 
@@ -13,12 +23,14 @@
 
 ### Message:
 - Type (Enum):
-    - VIDEO - Youtube
-    - VIDEO - Vimeo
-    - TEXT
-    - IMAGE
+    - video/youtube
+    - text
+    - image
 - Author (String)
-- Origin (String)
+- Origin (Object):
+    - type (Enum):
+        - slack
+        - meetup
+    - meta (Object)
 - Data (String)
-- TimeStamp (Date)
-- Seen (Bool)
+- Timestamp (Date)
