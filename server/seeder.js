@@ -16,6 +16,50 @@ Meteor.startup(function() {
     });
 
     Messages.insert({
+        type: 'image',
+        data: 'https://demeliou.files.wordpress.com/2013/02/lord-of-the-rings-movie.jpg',
+        author: 'Cristiano',
+        origin: {
+            type: 'slack',
+            meta: {
+
+            }
+        },
+        timestamp: new Date()
+    });
+
+
+    Messages.insert({
+        type: 'meetup',
+        description: "<p>Agenda:</p> <p>- 19h00 Início do meetup<br/>- 19h30 Primeira apresentação: TBA<br/>- 20h00 Jantar<br/>- 21h00 Segunda apresentação: TBA</p> <p>As apresentações têm duração de 30mins.</p>",
+        distance: 47.46309034790039,
+        id: "zltnhlytnbcc",
+        name: "Porto.rb: Outubro",
+        venue: {
+            city: "Porto",
+            country: "PT"
+        },
+        time: 1445450400000,
+        origin: {
+            type: 'meetup'
+        },
+        timestamp: new Date()
+    });
+
+    Messages.insert({
+        type: 'image',
+        data: 'http://i.perezhilton.com/wp-content/uploads/2014/07/lego-wash-up-shore-free-17-years.gif',
+        author: 'Cristiano',
+        origin: {
+            type: 'slack',
+            meta: {
+
+            }
+        },
+        timestamp: new Date()
+    });
+
+    Messages.insert({
         type: 'video/youtube',
         data: 'BZP1rYjoBgI',
         author: 'Veiga',
@@ -25,28 +69,6 @@ Meteor.startup(function() {
 
             }
         },
-        timestamp: new Date()
-    });
-
-    Messages.insert({
-        type: 'image',
-        data: 'https://demeliou.files.wordpress.com/2013/02/lord-of-the-rings-movie.jpg',
-        author: 'Cristiano',
-        origin: {
-            type: 'slack',
-            meta: {
-
-            }
-        },
-        timestamp: new Date()
-    });
-
-
-    Messages.insert({
-        type: 'image',
-        data: 'https://demeliou.files.wordpress.com/2013/02/lord-of-the-rings-movie.jpg',
-        author: 'Cristiano',
-        origin: 'Faker',
         timestamp: new Date()
     });
 });
