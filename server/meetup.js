@@ -1,19 +1,29 @@
 var fetchNewMeetups = function () {
     try {
+        var meetup = Integrations.findOne({key: "meetup"})
+        
+        if (!meetup.enabled) {
+            return;
+        }
+        
+        if (meetup.metrics == 'km') {
+            meetup.radius = meetup.radius / 1.609344;
+        }
+
         var result = HTTP.call("GET", "https://api.meetup.com/2/open_events",
             {
                 params: {
-                    city: 'braga',
-                    country: 'pt',
+                    city: meetup.city,
+                    country: meetup.country,
                     format: 'json',
                     'photo-host': 'public',
                     page: 20,
-                    radius: 50,
-                    category: "11,34",
+                    radius: meetup.radius,
+                    category: meetup.categories,
                     sign: true,
                     desc : false,
                     status : 'upcoming',
-                    key: '9657f1241185e7f156620395c92c2',
+                    key: meetup.token,
                 }
             });
 
@@ -31,13 +41,17 @@ var fetchNewMeetups = function () {
                    state: value.venue.state,
                    country: value.venue.country,
                },
-               distance: value.distance * 1.609344,
+               distance: value.distance,
                origin: {
                    type: 'meetup',
                    meta: {}
                }
            };
-
+           
+           if (meetup.metrics == "km") {
+               event.distance = event.distance * 1.609344;
+           }
+           
            if (value.short_link) {
                event.short_link = value.short_link;
            }
@@ -70,3 +84,29 @@ var cron = new Meteor.Cron( {
     "* * * * *"  : fetchNewMeetups
     }
 });
+<<<<<<< HEAD
+=======
+
+
+Meteor.methods({
+    getMeetupCategories: function(apiToken) {
+        
+        
+        try {
+            var result =  HTTP.call("GET", "https://api.meetup.com/2/categories",
+            {
+                params: {
+                    sign: true,
+                    key: apiToken,
+                }
+            });
+    
+            return result.data.results;
+        }
+        catch (e) {
+            return [];
+        }
+   },
+    
+});
+>>>>>>> Added settings for meetup
