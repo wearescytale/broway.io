@@ -41,6 +41,7 @@ iron:middleware-stack@1.0.11
 iron:router@1.0.12
 iron:url@1.0.11
 jquery@1.11.4
+json@1.0.3
 launch-screen@1.0.4
 livedata@1.0.15
 logging@1.0.8
@@ -64,6 +65,7 @@ reactive-var@1.0.6
 reload@1.1.4
 retry@1.0.4
 reywood:bootstrap3-sass@3.3.5_2
+robincwillis:multiple-select@0.0.2
 routepolicy@1.0.6
 session@1.1.1
 spacebars@1.0.7

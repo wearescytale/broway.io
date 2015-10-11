@@ -1,3 +1,42 @@
 <template name="meetup">
     <h1>Meetup</h1>
+    <div class="row">
+        <div class="col-xs-6">
+            <form class="meetup-form">
+                <div class="checkbox">
+                    <label>
+                        <input name="enabled" type="checkbox" checked="{{ meetup.enabled }}"> Enabled
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label for="">Api token</label>
+                    <input type="text" name="token" id="meetup-api-token" class="form-control" placeholder="api token" value="{{ meetup.token }}" />
+                </div>
+                <div class="form-group">
+                    <label for="">City</label>
+                    <input type="text" name="city" class="form-control" placeholder="city" value="{{ meetup.city }}" />
+                </div>
+                <div class="form-group">
+                    <label for="">Country</label>
+                    <input type="text" name="country" class="form-control" placeholder="country" value="{{ meetup.country }}" />
+                </div>
+                <div class="form-group">
+                    <label for="">Categories</label>
+                    {{>multipleSelect
+                        options=options
+                        settings=settings
+                    }}
+                </div>
+                <div class="form-group">
+                    <label for="">Radius</label>
+                    <input type="number" name="radius" class="form-control" placeholder="radius distance" value="{{ meetup.radius }}" />
+                    <select name="metrics" id="">
+                        <option value="km">Km</option>
+                        <option value="miles">Miles</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+        </div>
+    </div>
 </template>
