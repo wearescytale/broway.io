@@ -84,9 +84,6 @@ var cron = new Meteor.Cron( {
     "* * * * *"  : fetchNewMeetups
     }
 });
-<<<<<<< HEAD
-=======
-
 
 Meteor.methods({
     getMeetupCategories: function(apiToken) {
@@ -109,4 +106,3 @@ Meteor.methods({
    },
     
 });
->>>>>>> Added settings for meetup
