@@ -5,7 +5,7 @@ The app as a seeder.js script that will inject some fake messages and demo the a
 To configure and use real data go to /settings to enable and configure the Slack and Meetup integrations.
 
 ### Slack
-The Slack integration will listen to a channel and send every message starting with 'bro:' to the app. If the content is an url with an image it will display it. If the url is to an youtube video it will automatically play it. Any other message will be displayed as plain text.
+The Slack integration will listen to a channel and send every message starting with 'bro:' to the app. If the content is an URL with an image it will display it. If the URL is to a youtube video it will automatically play it. Any other message will be displayed as plain text.
 
 ### Meetup
 The Meetup integration will automatically find all meetups near you and display them on the screen.
@@ -15,7 +15,7 @@ The Meetup integration will automatically find all meetups near you and display 
 
 **server/** – Conversely, any files inside any directories named server are purely server-side, and will not be sent to the client. We will add code we don’t want the users to see here, such as code for password authentication.
 
-**public/** – We will place assets that needs to be served as-is to the client in this directory. You can reference them as if they are in the root directory. So public/img/kittens.png can be accessed in your HTML files as img/kittens.png. We will put images, robot.txt, favicon.ico files here.
+**public/** – We will place assets that need to be served as-is to the client in this directory. You can reference them as if they are in the root directory. So public/img/kittens.png can be accessed in your HTML files as img/kittens.png. We will put images, robot.txt, favicon.ico files here.
 
 **private/** – Like public/, private/ houses assets which should only be accessed by the server via the Assets API.
 
